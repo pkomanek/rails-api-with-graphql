@@ -3371,3 +3371,446 @@ Processing by GraphqlController#execute as */*
 Completed 200 OK in 13ms (Views: 0.5ms | ActiveRecord: 0.5ms)
 
 
+Started POST "/graphql" for ::1 at 2021-01-07 14:59:11 +0100
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/pkomanek/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"query {\n  users(limit: 5, offset: 0) {\n    id\n    name\n    email\n  }\n}\n", "variables"=>nil, "graphql"=>{"query"=>"query {\n  users(limit: 5, offset: 0) {\n    id\n    name\n    email\n  }\n}\n", "variables"=>nil}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/graphql/types/query_type.rb:14
+Completed 200 OK in 15ms (Views: 0.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/graphiql" for ::1 at 2021-01-07 14:59:13 +0100
+Processing by GraphiQL::Rails::EditorsController#show as HTML
+  Parameters: {"graphql_path"=>"graphql#execute"}
+  Rendering /home/pkomanek/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/graphiql-rails-1.7.0/app/views/graphiql/rails/editors/show.html.erb
+  Rendered /home/pkomanek/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/graphiql-rails-1.7.0/app/views/graphiql/rails/editors/show.html.erb (33.2ms)
+Completed 200 OK in 38ms (Views: 36.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/graphql" for ::1 at 2021-01-07 14:59:13 +0100
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"\n    query IntrospectionQuery {\n      __schema {\n        queryType { name }\n        mutationType { name }\n        subscriptionType { name }\n        types {\n          ...FullType\n        }\n        directives {\n          name\n          description\n          locations\n          args {\n            ...InputValue\n          }\n        }\n      }\n    }\n\n    fragment FullType on __Type {\n      kind\n      name\n      description\n      fields(includeDeprecated: true) {\n        name\n        description\n        args {\n          ...InputValue\n        }\n        type {\n          ...TypeRef\n        }\n        isDeprecated\n        deprecationReason\n      }\n      inputFields {\n        ...InputValue\n      }\n      interfaces {\n        ...TypeRef\n      }\n      enumValues(includeDeprecated: true) {\n        name\n        description\n        isDeprecated\n        deprecationReason\n      }\n      possibleTypes {\n        ...TypeRef\n      }\n    }\n\n    fragment InputValue on __InputValue {\n      name\n      description\n      type { ...TypeRef }\n      defaultValue\n    }\n\n    fragment TypeRef on __Type {\n      kind\n      name\n      ofType {\n        kind\n        name\n        ofType {\n          kind\n          name\n          ofType {\n            kind\n            name\n            ofType {\n              kind\n              name\n              ofType {\n                kind\n                name\n                ofType {\n                  kind\n                  name\n                  ofType {\n                    kind\n                    name\n                  }\n                }\n              }\n            }\n          }\n        }\n      }\n    }\n  ", "graphql"=>{"query"=>"\n    query IntrospectionQuery {\n      __schema {\n        queryType { name }\n        mutationType { name }\n        subscriptionType { name }\n        types {\n          ...FullType\n        }\n        directives {\n          name\n          description\n          locations\n          args {\n            ...InputValue\n          }\n        }\n      }\n    }\n\n    fragment FullType on __Type {\n      kind\n      name\n      description\n      fields(includeDeprecated: true) {\n        name\n        description\n        args {\n          ...InputValue\n        }\n        type {\n          ...TypeRef\n        }\n        isDeprecated\n        deprecationReason\n      }\n      inputFields {\n        ...InputValue\n      }\n      interfaces {\n        ...TypeRef\n      }\n      enumValues(includeDeprecated: true) {\n        name\n        description\n        isDeprecated\n        deprecationReason\n      }\n      possibleTypes {\n        ...TypeRef\n      }\n    }\n\n    fragment InputValue on __InputValue {\n      name\n      description\n      type { ...TypeRef }\n      defaultValue\n    }\n\n    fragment TypeRef on __Type {\n      kind\n      name\n      ofType {\n        kind\n        name\n        ofType {\n          kind\n          name\n          ofType {\n            kind\n            name\n            ofType {\n              kind\n              name\n              ofType {\n                kind\n                name\n                ofType {\n                  kind\n                  name\n                  ofType {\n                    kind\n                    name\n                  }\n                }\n              }\n            }\n          }\n        }\n      }\n    }\n  "}}
+Completed 200 OK in 50ms (Views: 4.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/graphql" for ::1 at 2021-01-07 14:59:14 +0100
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"query {\n  users(limit: 5, offset: 0) {\n    id\n    name\n    email\n  }\n}\n", "variables"=>nil, "graphql"=>{"query"=>"query {\n  users(limit: 5, offset: 0) {\n    id\n    name\n    email\n  }\n}\n", "variables"=>nil}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/graphql/types/query_type.rb:14
+Completed 200 OK in 11ms (Views: 1.0ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/graphql" for ::1 at 2021-01-07 14:59:26 +0100
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"query {\n  users(limit: 5, offset: 0) {\n    id\n    name\n    email\n  }\n  userCount\n}\n", "variables"=>nil, "graphql"=>{"query"=>"query {\n  users(limit: 5, offset: 0) {\n    id\n    name\n    email\n  }\n  userCount\n}\n", "variables"=>nil}}
+Completed 200 OK in 3ms (Views: 0.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/graphql" for ::1 at 2021-01-07 15:01:49 +0100
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"query {\n  users(limit: 5, offset: 0) {\n    id\n    name\n    email\n  }\n  userCount\n}\n", "variables"=>nil, "graphql"=>{"query"=>"query {\n  users(limit: 5, offset: 0) {\n    id\n    name\n    email\n  }\n  userCount\n}\n", "variables"=>nil}}
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/home/pkomanek/redhat/graphql-test/rails-api-with-graphql/app/graphql/types/query_type.rb:29: syntax error, unexpected ':', expecting end
+...eld :user_count, Integer. null: false
+...                              ^):
+  
+app/graphql/types/query_type.rb:29: syntax error, unexpected ':', expecting end
+app/graphql/graphql_fun_demo_schema.rb:3:in `<class:GraphqlFunDemoSchema>'
+app/graphql/graphql_fun_demo_schema.rb:1:in `<main>'
+app/controllers/graphql_controller.rb:15:in `execute'
+Started POST "/graphql" for ::1 at 2021-01-07 15:02:13 +0100
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"query {\n  users(limit: 5, offset: 0) {\n    id\n    name\n    email\n  }\n  userCount\n}\n", "variables"=>nil, "graphql"=>{"query"=>"query {\n  users(limit: 5, offset: 0) {\n    id\n    name\n    email\n  }\n  userCount\n}\n", "variables"=>nil}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/graphql/types/query_type.rb:14
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  ↳ app/graphql/types/query_type.rb:32
+Completed 200 OK in 17ms (Views: 0.2ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/graphiql" for ::1 at 2021-01-07 15:02:20 +0100
+Processing by GraphiQL::Rails::EditorsController#show as HTML
+  Parameters: {"graphql_path"=>"graphql#execute"}
+  Rendering /home/pkomanek/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/graphiql-rails-1.7.0/app/views/graphiql/rails/editors/show.html.erb
+  Rendered /home/pkomanek/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/graphiql-rails-1.7.0/app/views/graphiql/rails/editors/show.html.erb (4.6ms)
+Completed 200 OK in 8ms (Views: 6.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/graphql" for ::1 at 2021-01-07 15:02:20 +0100
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"\n    query IntrospectionQuery {\n      __schema {\n        queryType { name }\n        mutationType { name }\n        subscriptionType { name }\n        types {\n          ...FullType\n        }\n        directives {\n          name\n          description\n          locations\n          args {\n            ...InputValue\n          }\n        }\n      }\n    }\n\n    fragment FullType on __Type {\n      kind\n      name\n      description\n      fields(includeDeprecated: true) {\n        name\n        description\n        args {\n          ...InputValue\n        }\n        type {\n          ...TypeRef\n        }\n        isDeprecated\n        deprecationReason\n      }\n      inputFields {\n        ...InputValue\n      }\n      interfaces {\n        ...TypeRef\n      }\n      enumValues(includeDeprecated: true) {\n        name\n        description\n        isDeprecated\n        deprecationReason\n      }\n      possibleTypes {\n        ...TypeRef\n      }\n    }\n\n    fragment InputValue on __InputValue {\n      name\n      description\n      type { ...TypeRef }\n      defaultValue\n    }\n\n    fragment TypeRef on __Type {\n      kind\n      name\n      ofType {\n        kind\n        name\n        ofType {\n          kind\n          name\n          ofType {\n            kind\n            name\n            ofType {\n              kind\n              name\n              ofType {\n                kind\n                name\n                ofType {\n                  kind\n                  name\n                  ofType {\n                    kind\n                    name\n                  }\n                }\n              }\n            }\n          }\n        }\n      }\n    }\n  ", "graphql"=>{"query"=>"\n    query IntrospectionQuery {\n      __schema {\n        queryType { name }\n        mutationType { name }\n        subscriptionType { name }\n        types {\n          ...FullType\n        }\n        directives {\n          name\n          description\n          locations\n          args {\n            ...InputValue\n          }\n        }\n      }\n    }\n\n    fragment FullType on __Type {\n      kind\n      name\n      description\n      fields(includeDeprecated: true) {\n        name\n        description\n        args {\n          ...InputValue\n        }\n        type {\n          ...TypeRef\n        }\n        isDeprecated\n        deprecationReason\n      }\n      inputFields {\n        ...InputValue\n      }\n      interfaces {\n        ...TypeRef\n      }\n      enumValues(includeDeprecated: true) {\n        name\n        description\n        isDeprecated\n        deprecationReason\n      }\n      possibleTypes {\n        ...TypeRef\n      }\n    }\n\n    fragment InputValue on __InputValue {\n      name\n      description\n      type { ...TypeRef }\n      defaultValue\n    }\n\n    fragment TypeRef on __Type {\n      kind\n      name\n      ofType {\n        kind\n        name\n        ofType {\n          kind\n          name\n          ofType {\n            kind\n            name\n            ofType {\n              kind\n              name\n              ofType {\n                kind\n                name\n                ofType {\n                  kind\n                  name\n                  ofType {\n                    kind\n                    name\n                  }\n                }\n              }\n            }\n          }\n        }\n      }\n    }\n  "}}
+Completed 200 OK in 47ms (Views: 3.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/graphql" for ::1 at 2021-01-07 15:02:21 +0100
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"query {\n  users(limit: 5, offset: 0) {\n    id\n    name\n    email\n  }\n  userCount\n}\n", "variables"=>nil, "graphql"=>{"query"=>"query {\n  users(limit: 5, offset: 0) {\n    id\n    name\n    email\n  }\n  userCount\n}\n", "variables"=>nil}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/graphql/types/query_type.rb:14
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  ↳ app/graphql/types/query_type.rb:32
+Completed 200 OK in 16ms (Views: 0.6ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/graphql" for ::1 at 2021-01-07 15:02:22 +0100
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"query {\n  users(limit: 5, offset: 0) {\n    id\n    name\n    email\n  }\n  userCount\n}\n", "variables"=>nil, "graphql"=>{"query"=>"query {\n  users(limit: 5, offset: 0) {\n    id\n    name\n    email\n  }\n  userCount\n}\n", "variables"=>nil}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/graphql/types/query_type.rb:14
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  ↳ app/graphql/types/query_type.rb:32
+Completed 200 OK in 9ms (Views: 0.6ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/graphql" for ::1 at 2021-01-07 15:02:22 +0100
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"query {\n  users(limit: 5, offset: 0) {\n    id\n    name\n    email\n  }\n  userCount\n}\n", "variables"=>nil, "graphql"=>{"query"=>"query {\n  users(limit: 5, offset: 0) {\n    id\n    name\n    email\n  }\n  userCount\n}\n", "variables"=>nil}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/graphql/types/query_type.rb:14
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  ↳ app/graphql/types/query_type.rb:32
+Completed 200 OK in 10ms (Views: 0.6ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/graphql" for ::1 at 2021-01-07 15:02:23 +0100
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"query {\n  users(limit: 5, offset: 0) {\n    id\n    name\n    email\n  }\n  userCount\n}\n", "variables"=>nil, "graphql"=>{"query"=>"query {\n  users(limit: 5, offset: 0) {\n    id\n    name\n    email\n  }\n  userCount\n}\n", "variables"=>nil}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/graphql/types/query_type.rb:14
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  ↳ app/graphql/types/query_type.rb:32
+Completed 200 OK in 10ms (Views: 0.7ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/graphql" for ::1 at 2021-01-07 15:02:23 +0100
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"query {\n  users(limit: 5, offset: 0) {\n    id\n    name\n    email\n  }\n  userCount\n}\n", "variables"=>nil, "graphql"=>{"query"=>"query {\n  users(limit: 5, offset: 0) {\n    id\n    name\n    email\n  }\n  userCount\n}\n", "variables"=>nil}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/graphql/types/query_type.rb:14
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  ↳ app/graphql/types/query_type.rb:32
+Completed 200 OK in 6ms (Views: 0.3ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/graphql" for ::1 at 2021-01-07 15:02:26 +0100
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"query {\n  users(limit: 5, offset: 0) {\n    id\n    name\n    email\n  }\n  userCount\n}\n", "variables"=>nil, "graphql"=>{"query"=>"query {\n  users(limit: 5, offset: 0) {\n    id\n    name\n    email\n  }\n  userCount\n}\n", "variables"=>nil}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/graphql/types/query_type.rb:14
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  ↳ app/graphql/types/query_type.rb:32
+Completed 200 OK in 11ms (Views: 0.7ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/graphql" for ::1 at 2021-01-07 15:02:45 +0100
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"query {\n  users(limit: 5, offset: 0) {\n    id\n    name\n    email\n  }\n  user_count\n}\n", "variables"=>nil, "graphql"=>{"query"=>"query {\n  users(limit: 5, offset: 0) {\n    id\n    name\n    email\n  }\n  user_count\n}\n", "variables"=>nil}}
+Completed 200 OK in 6ms (Views: 0.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/graphql" for ::1 at 2021-01-07 15:02:50 +0100
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"query {\n  users(limit: 5, offset: 0) {\n    id\n    name\n    email\n  }\n  userCount\n}\n", "variables"=>nil, "graphql"=>{"query"=>"query {\n  users(limit: 5, offset: 0) {\n    id\n    name\n    email\n  }\n  userCount\n}\n", "variables"=>nil}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/graphql/types/query_type.rb:14
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  ↳ app/graphql/types/query_type.rb:32
+Completed 200 OK in 14ms (Views: 0.7ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/graphql" for ::1 at 2021-01-07 15:03:53 +0100
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"query {\n  users(limit: 5, offset: 0) {\n    id\n    name\n    email\n  }\n  userCount\n  postCount\n}\n", "variables"=>nil, "graphql"=>{"query"=>"query {\n  users(limit: 5, offset: 0) {\n    id\n    name\n    email\n  }\n  userCount\n  postCount\n}\n", "variables"=>nil}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/graphql/types/query_type.rb:14
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  ↳ app/graphql/types/query_type.rb:32
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  ↳ app/graphql/types/query_type.rb:46
+Completed 200 OK in 17ms (Views: 0.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/graphiql" for ::1 at 2021-01-07 15:03:56 +0100
+Processing by GraphiQL::Rails::EditorsController#show as HTML
+  Parameters: {"graphql_path"=>"graphql#execute"}
+  Rendering /home/pkomanek/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/graphiql-rails-1.7.0/app/views/graphiql/rails/editors/show.html.erb
+  Rendered /home/pkomanek/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/graphiql-rails-1.7.0/app/views/graphiql/rails/editors/show.html.erb (5.2ms)
+Completed 200 OK in 8ms (Views: 7.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/graphql" for ::1 at 2021-01-07 15:03:57 +0100
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"\n    query IntrospectionQuery {\n      __schema {\n        queryType { name }\n        mutationType { name }\n        subscriptionType { name }\n        types {\n          ...FullType\n        }\n        directives {\n          name\n          description\n          locations\n          args {\n            ...InputValue\n          }\n        }\n      }\n    }\n\n    fragment FullType on __Type {\n      kind\n      name\n      description\n      fields(includeDeprecated: true) {\n        name\n        description\n        args {\n          ...InputValue\n        }\n        type {\n          ...TypeRef\n        }\n        isDeprecated\n        deprecationReason\n      }\n      inputFields {\n        ...InputValue\n      }\n      interfaces {\n        ...TypeRef\n      }\n      enumValues(includeDeprecated: true) {\n        name\n        description\n        isDeprecated\n        deprecationReason\n      }\n      possibleTypes {\n        ...TypeRef\n      }\n    }\n\n    fragment InputValue on __InputValue {\n      name\n      description\n      type { ...TypeRef }\n      defaultValue\n    }\n\n    fragment TypeRef on __Type {\n      kind\n      name\n      ofType {\n        kind\n        name\n        ofType {\n          kind\n          name\n          ofType {\n            kind\n            name\n            ofType {\n              kind\n              name\n              ofType {\n                kind\n                name\n                ofType {\n                  kind\n                  name\n                  ofType {\n                    kind\n                    name\n                  }\n                }\n              }\n            }\n          }\n        }\n      }\n    }\n  ", "graphql"=>{"query"=>"\n    query IntrospectionQuery {\n      __schema {\n        queryType { name }\n        mutationType { name }\n        subscriptionType { name }\n        types {\n          ...FullType\n        }\n        directives {\n          name\n          description\n          locations\n          args {\n            ...InputValue\n          }\n        }\n      }\n    }\n\n    fragment FullType on __Type {\n      kind\n      name\n      description\n      fields(includeDeprecated: true) {\n        name\n        description\n        args {\n          ...InputValue\n        }\n        type {\n          ...TypeRef\n        }\n        isDeprecated\n        deprecationReason\n      }\n      inputFields {\n        ...InputValue\n      }\n      interfaces {\n        ...TypeRef\n      }\n      enumValues(includeDeprecated: true) {\n        name\n        description\n        isDeprecated\n        deprecationReason\n      }\n      possibleTypes {\n        ...TypeRef\n      }\n    }\n\n    fragment InputValue on __InputValue {\n      name\n      description\n      type { ...TypeRef }\n      defaultValue\n    }\n\n    fragment TypeRef on __Type {\n      kind\n      name\n      ofType {\n        kind\n        name\n        ofType {\n          kind\n          name\n          ofType {\n            kind\n            name\n            ofType {\n              kind\n              name\n              ofType {\n                kind\n                name\n                ofType {\n                  kind\n                  name\n                  ofType {\n                    kind\n                    name\n                  }\n                }\n              }\n            }\n          }\n        }\n      }\n    }\n  "}}
+Completed 200 OK in 49ms (Views: 3.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/graphql" for ::1 at 2021-01-07 15:03:59 +0100
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"query {\n  users(limit: 5, offset: 0) {\n    id\n    name\n    email\n  }\n  userCount\n  postCount\n}\n", "variables"=>nil, "graphql"=>{"query"=>"query {\n  users(limit: 5, offset: 0) {\n    id\n    name\n    email\n  }\n  userCount\n  postCount\n}\n", "variables"=>nil}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/graphql/types/query_type.rb:14
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  ↳ app/graphql/types/query_type.rb:32
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  ↳ app/graphql/types/query_type.rb:46
+Completed 200 OK in 14ms (Views: 0.8ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/graphiql" for ::1 at 2021-01-07 15:04:24 +0100
+Processing by GraphiQL::Rails::EditorsController#show as HTML
+  Parameters: {"graphql_path"=>"graphql#execute"}
+  Rendering /home/pkomanek/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/graphiql-rails-1.7.0/app/views/graphiql/rails/editors/show.html.erb
+  Rendered /home/pkomanek/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/graphiql-rails-1.7.0/app/views/graphiql/rails/editors/show.html.erb (3.5ms)
+Completed 200 OK in 5ms (Views: 4.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/graphql" for ::1 at 2021-01-07 15:04:24 +0100
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"\n    query IntrospectionQuery {\n      __schema {\n        queryType { name }\n        mutationType { name }\n        subscriptionType { name }\n        types {\n          ...FullType\n        }\n        directives {\n          name\n          description\n          locations\n          args {\n            ...InputValue\n          }\n        }\n      }\n    }\n\n    fragment FullType on __Type {\n      kind\n      name\n      description\n      fields(includeDeprecated: true) {\n        name\n        description\n        args {\n          ...InputValue\n        }\n        type {\n          ...TypeRef\n        }\n        isDeprecated\n        deprecationReason\n      }\n      inputFields {\n        ...InputValue\n      }\n      interfaces {\n        ...TypeRef\n      }\n      enumValues(includeDeprecated: true) {\n        name\n        description\n        isDeprecated\n        deprecationReason\n      }\n      possibleTypes {\n        ...TypeRef\n      }\n    }\n\n    fragment InputValue on __InputValue {\n      name\n      description\n      type { ...TypeRef }\n      defaultValue\n    }\n\n    fragment TypeRef on __Type {\n      kind\n      name\n      ofType {\n        kind\n        name\n        ofType {\n          kind\n          name\n          ofType {\n            kind\n            name\n            ofType {\n              kind\n              name\n              ofType {\n                kind\n                name\n                ofType {\n                  kind\n                  name\n                  ofType {\n                    kind\n                    name\n                  }\n                }\n              }\n            }\n          }\n        }\n      }\n    }\n  ", "graphql"=>{"query"=>"\n    query IntrospectionQuery {\n      __schema {\n        queryType { name }\n        mutationType { name }\n        subscriptionType { name }\n        types {\n          ...FullType\n        }\n        directives {\n          name\n          description\n          locations\n          args {\n            ...InputValue\n          }\n        }\n      }\n    }\n\n    fragment FullType on __Type {\n      kind\n      name\n      description\n      fields(includeDeprecated: true) {\n        name\n        description\n        args {\n          ...InputValue\n        }\n        type {\n          ...TypeRef\n        }\n        isDeprecated\n        deprecationReason\n      }\n      inputFields {\n        ...InputValue\n      }\n      interfaces {\n        ...TypeRef\n      }\n      enumValues(includeDeprecated: true) {\n        name\n        description\n        isDeprecated\n        deprecationReason\n      }\n      possibleTypes {\n        ...TypeRef\n      }\n    }\n\n    fragment InputValue on __InputValue {\n      name\n      description\n      type { ...TypeRef }\n      defaultValue\n    }\n\n    fragment TypeRef on __Type {\n      kind\n      name\n      ofType {\n        kind\n        name\n        ofType {\n          kind\n          name\n          ofType {\n            kind\n            name\n            ofType {\n              kind\n              name\n              ofType {\n                kind\n                name\n                ofType {\n                  kind\n                  name\n                  ofType {\n                    kind\n                    name\n                  }\n                }\n              }\n            }\n          }\n        }\n      }\n    }\n  "}}
+Completed 200 OK in 59ms (Views: 12.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/graphql" for ::1 at 2021-01-07 15:04:25 +0100
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"query {\n  users(limit: 5, offset: 0) {\n    id\n    name\n    email\n  }\n  userCount\n  postCount\n}\n", "variables"=>nil, "graphql"=>{"query"=>"query {\n  users(limit: 5, offset: 0) {\n    id\n    name\n    email\n  }\n  userCount\n  postCount\n}\n", "variables"=>nil}}
+Completed 200 OK in 4ms (Views: 0.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/graphql" for ::1 at 2021-01-07 15:04:32 +0100
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"query {\n  users(limit: 5, offset: 0) {\n    id\n    name\n    email\n  }\n  usersCount\n  postsCount\n}\n", "variables"=>nil, "graphql"=>{"query"=>"query {\n  users(limit: 5, offset: 0) {\n    id\n    name\n    email\n  }\n  usersCount\n  postsCount\n}\n", "variables"=>nil}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/graphql/types/query_type.rb:14
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  ↳ app/graphql/types/query_type.rb:32
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  ↳ app/graphql/types/query_type.rb:46
+Completed 200 OK in 33ms (Views: 0.4ms | ActiveRecord: 1.6ms)
+
+
+Started POST "/graphql" for ::1 at 2021-01-07 15:05:15 +0100
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"query {\n  users(limit: 5, offset: 0) {\n    id\n    name\n    email\n    posts {\n      id\n    }\n  }\n  usersCount\n  postsCount\n}\n", "variables"=>nil, "graphql"=>{"query"=>"query {\n  users(limit: 5, offset: 0) {\n    id\n    name\n    email\n    posts {\n      id\n    }\n  }\n  usersCount\n  postsCount\n}\n", "variables"=>nil}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/graphql/types/query_type.rb:14
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/graphql_controller.rb:15
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/controllers/graphql_controller.rb:15
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = ?[0m  [["user_id", 3]]
+  ↳ app/controllers/graphql_controller.rb:15
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = ?[0m  [["user_id", 4]]
+  ↳ app/controllers/graphql_controller.rb:15
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = ?[0m  [["user_id", 5]]
+  ↳ app/controllers/graphql_controller.rb:15
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  ↳ app/graphql/types/query_type.rb:32
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  ↳ app/graphql/types/query_type.rb:46
+Completed 200 OK in 37ms (Views: 0.6ms | ActiveRecord: 1.3ms)
+
+
+Started POST "/graphql" for ::1 at 2021-01-07 15:05:29 +0100
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"query {\n  users(limit: 5, offset: 0) {\n    id\n    name\n    email\n    posts {\n      id\n      title\n      body\n    }\n  }\n  usersCount\n  postsCount\n}\n", "variables"=>nil, "graphql"=>{"query"=>"query {\n  users(limit: 5, offset: 0) {\n    id\n    name\n    email\n    posts {\n      id\n      title\n      body\n    }\n  }\n  usersCount\n  postsCount\n}\n", "variables"=>nil}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/graphql/types/query_type.rb:14
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/graphql_controller.rb:15
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/controllers/graphql_controller.rb:15
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = ?[0m  [["user_id", 3]]
+  ↳ app/controllers/graphql_controller.rb:15
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = ?[0m  [["user_id", 4]]
+  ↳ app/controllers/graphql_controller.rb:15
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = ?[0m  [["user_id", 5]]
+  ↳ app/controllers/graphql_controller.rb:15
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  ↳ app/graphql/types/query_type.rb:32
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  ↳ app/graphql/types/query_type.rb:46
+Completed 200 OK in 26ms (Views: 0.7ms | ActiveRecord: 1.7ms)
+
+
+Started POST "/graphql" for ::1 at 2021-01-07 15:05:50 +0100
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"query {\n  users(limit: 5, offset: 0) {\n    id\n    name\n    email\n    posts {\n      id\n      title\n      body\n    }\n    postsCount\n  }\n  usersCount\n  postsCount\n}\n", "variables"=>nil, "graphql"=>{"query"=>"query {\n  users(limit: 5, offset: 0) {\n    id\n    name\n    email\n    posts {\n      id\n      title\n      body\n    }\n    postsCount\n  }\n  usersCount\n  postsCount\n}\n", "variables"=>nil}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/graphql/types/query_type.rb:14
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/graphql_controller.rb:15
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/controllers/graphql_controller.rb:15
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = ?[0m  [["user_id", 3]]
+  ↳ app/controllers/graphql_controller.rb:15
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = ?[0m  [["user_id", 4]]
+  ↳ app/controllers/graphql_controller.rb:15
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = ?[0m  [["user_id", 5]]
+  ↳ app/controllers/graphql_controller.rb:15
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  ↳ app/graphql/types/query_type.rb:32
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  ↳ app/graphql/types/query_type.rb:46
+Completed 200 OK in 30ms (Views: 1.3ms | ActiveRecord: 1.7ms)
+
+
+Started POST "/graphql" for ::1 at 2021-01-07 15:06:16 +0100
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"query {\n  users(limit: 5, offset: 0) {\n    id\n    name\n    email\n    posts(limit:1, offset:1) {\n      id\n      title\n      body\n    }\n    postsCount\n  }\n  usersCount\n  postsCount\n}\n", "variables"=>nil, "graphql"=>{"query"=>"query {\n  users(limit: 5, offset: 0) {\n    id\n    name\n    email\n    posts(limit:1, offset:1) {\n      id\n      title\n      body\n    }\n    postsCount\n  }\n  usersCount\n  postsCount\n}\n", "variables"=>nil}}
+Completed 200 OK in 6ms (Views: 0.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/graphiql" for ::1 at 2021-01-07 15:07:51 +0100
+Processing by GraphiQL::Rails::EditorsController#show as HTML
+  Parameters: {"graphql_path"=>"graphql#execute"}
+  Rendering /home/pkomanek/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/graphiql-rails-1.7.0/app/views/graphiql/rails/editors/show.html.erb
+  Rendered /home/pkomanek/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/graphiql-rails-1.7.0/app/views/graphiql/rails/editors/show.html.erb (3.9ms)
+Completed 200 OK in 6ms (Views: 5.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/graphql" for ::1 at 2021-01-07 15:07:51 +0100
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"\n    query IntrospectionQuery {\n      __schema {\n        queryType { name }\n        mutationType { name }\n        subscriptionType { name }\n        types {\n          ...FullType\n        }\n        directives {\n          name\n          description\n          locations\n          args {\n            ...InputValue\n          }\n        }\n      }\n    }\n\n    fragment FullType on __Type {\n      kind\n      name\n      description\n      fields(includeDeprecated: true) {\n        name\n        description\n        args {\n          ...InputValue\n        }\n        type {\n          ...TypeRef\n        }\n        isDeprecated\n        deprecationReason\n      }\n      inputFields {\n        ...InputValue\n      }\n      interfaces {\n        ...TypeRef\n      }\n      enumValues(includeDeprecated: true) {\n        name\n        description\n        isDeprecated\n        deprecationReason\n      }\n      possibleTypes {\n        ...TypeRef\n      }\n    }\n\n    fragment InputValue on __InputValue {\n      name\n      description\n      type { ...TypeRef }\n      defaultValue\n    }\n\n    fragment TypeRef on __Type {\n      kind\n      name\n      ofType {\n        kind\n        name\n        ofType {\n          kind\n          name\n          ofType {\n            kind\n            name\n            ofType {\n              kind\n              name\n              ofType {\n                kind\n                name\n                ofType {\n                  kind\n                  name\n                  ofType {\n                    kind\n                    name\n                  }\n                }\n              }\n            }\n          }\n        }\n      }\n    }\n  ", "graphql"=>{"query"=>"\n    query IntrospectionQuery {\n      __schema {\n        queryType { name }\n        mutationType { name }\n        subscriptionType { name }\n        types {\n          ...FullType\n        }\n        directives {\n          name\n          description\n          locations\n          args {\n            ...InputValue\n          }\n        }\n      }\n    }\n\n    fragment FullType on __Type {\n      kind\n      name\n      description\n      fields(includeDeprecated: true) {\n        name\n        description\n        args {\n          ...InputValue\n        }\n        type {\n          ...TypeRef\n        }\n        isDeprecated\n        deprecationReason\n      }\n      inputFields {\n        ...InputValue\n      }\n      interfaces {\n        ...TypeRef\n      }\n      enumValues(includeDeprecated: true) {\n        name\n        description\n        isDeprecated\n        deprecationReason\n      }\n      possibleTypes {\n        ...TypeRef\n      }\n    }\n\n    fragment InputValue on __InputValue {\n      name\n      description\n      type { ...TypeRef }\n      defaultValue\n    }\n\n    fragment TypeRef on __Type {\n      kind\n      name\n      ofType {\n        kind\n        name\n        ofType {\n          kind\n          name\n          ofType {\n            kind\n            name\n            ofType {\n              kind\n              name\n              ofType {\n                kind\n                name\n                ofType {\n                  kind\n                  name\n                  ofType {\n                    kind\n                    name\n                  }\n                }\n              }\n            }\n          }\n        }\n      }\n    }\n  "}}
+Completed 200 OK in 62ms (Views: 4.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/graphql" for ::1 at 2021-01-07 15:07:52 +0100
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"query {\n  users(limit: 5, offset: 0) {\n    id\n    name\n    email\n    posts(limit:1, offset:1) {\n      id\n      title\n      body\n    }\n    postsCount\n  }\n  usersCount\n  postsCount\n}\n", "variables"=>nil, "graphql"=>{"query"=>"query {\n  users(limit: 5, offset: 0) {\n    id\n    name\n    email\n    posts(limit:1, offset:1) {\n      id\n      title\n      body\n    }\n    postsCount\n  }\n  usersCount\n  postsCount\n}\n", "variables"=>nil}}
+Completed 200 OK in 5ms (Views: 0.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/graphiql" for ::1 at 2021-01-07 15:07:56 +0100
+Processing by GraphiQL::Rails::EditorsController#show as HTML
+  Parameters: {"graphql_path"=>"graphql#execute"}
+  Rendering /home/pkomanek/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/graphiql-rails-1.7.0/app/views/graphiql/rails/editors/show.html.erb
+  Rendered /home/pkomanek/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/graphiql-rails-1.7.0/app/views/graphiql/rails/editors/show.html.erb (4.5ms)
+Completed 200 OK in 7ms (Views: 6.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/graphql" for ::1 at 2021-01-07 15:07:56 +0100
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"\n    query IntrospectionQuery {\n      __schema {\n        queryType { name }\n        mutationType { name }\n        subscriptionType { name }\n        types {\n          ...FullType\n        }\n        directives {\n          name\n          description\n          locations\n          args {\n            ...InputValue\n          }\n        }\n      }\n    }\n\n    fragment FullType on __Type {\n      kind\n      name\n      description\n      fields(includeDeprecated: true) {\n        name\n        description\n        args {\n          ...InputValue\n        }\n        type {\n          ...TypeRef\n        }\n        isDeprecated\n        deprecationReason\n      }\n      inputFields {\n        ...InputValue\n      }\n      interfaces {\n        ...TypeRef\n      }\n      enumValues(includeDeprecated: true) {\n        name\n        description\n        isDeprecated\n        deprecationReason\n      }\n      possibleTypes {\n        ...TypeRef\n      }\n    }\n\n    fragment InputValue on __InputValue {\n      name\n      description\n      type { ...TypeRef }\n      defaultValue\n    }\n\n    fragment TypeRef on __Type {\n      kind\n      name\n      ofType {\n        kind\n        name\n        ofType {\n          kind\n          name\n          ofType {\n            kind\n            name\n            ofType {\n              kind\n              name\n              ofType {\n                kind\n                name\n                ofType {\n                  kind\n                  name\n                  ofType {\n                    kind\n                    name\n                  }\n                }\n              }\n            }\n          }\n        }\n      }\n    }\n  ", "graphql"=>{"query"=>"\n    query IntrospectionQuery {\n      __schema {\n        queryType { name }\n        mutationType { name }\n        subscriptionType { name }\n        types {\n          ...FullType\n        }\n        directives {\n          name\n          description\n          locations\n          args {\n            ...InputValue\n          }\n        }\n      }\n    }\n\n    fragment FullType on __Type {\n      kind\n      name\n      description\n      fields(includeDeprecated: true) {\n        name\n        description\n        args {\n          ...InputValue\n        }\n        type {\n          ...TypeRef\n        }\n        isDeprecated\n        deprecationReason\n      }\n      inputFields {\n        ...InputValue\n      }\n      interfaces {\n        ...TypeRef\n      }\n      enumValues(includeDeprecated: true) {\n        name\n        description\n        isDeprecated\n        deprecationReason\n      }\n      possibleTypes {\n        ...TypeRef\n      }\n    }\n\n    fragment InputValue on __InputValue {\n      name\n      description\n      type { ...TypeRef }\n      defaultValue\n    }\n\n    fragment TypeRef on __Type {\n      kind\n      name\n      ofType {\n        kind\n        name\n        ofType {\n          kind\n          name\n          ofType {\n            kind\n            name\n            ofType {\n              kind\n              name\n              ofType {\n                kind\n                name\n                ofType {\n                  kind\n                  name\n                  ofType {\n                    kind\n                    name\n                  }\n                }\n              }\n            }\n          }\n        }\n      }\n    }\n  "}}
+Completed 200 OK in 47ms (Views: 3.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/graphql" for ::1 at 2021-01-07 15:07:58 +0100
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"query {\n  users(limit: 5, offset: 0) {\n    id\n    name\n    email\n    posts(limit:1, offset:1) {\n      id\n      title\n      body\n    }\n    postsCount\n  }\n  usersCount\n  postsCount\n}\n", "variables"=>nil, "graphql"=>{"query"=>"query {\n  users(limit: 5, offset: 0) {\n    id\n    name\n    email\n    posts(limit:1, offset:1) {\n      id\n      title\n      body\n    }\n    postsCount\n  }\n  usersCount\n  postsCount\n}\n", "variables"=>nil}}
+Completed 200 OK in 9ms (Views: 1.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/graphiql" for ::1 at 2021-01-07 15:08:32 +0100
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/pkomanek/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+Processing by GraphiQL::Rails::EditorsController#show as HTML
+  Parameters: {"graphql_path"=>"graphql#execute"}
+  Rendering /home/pkomanek/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/graphiql-rails-1.7.0/app/views/graphiql/rails/editors/show.html.erb
+  Rendered /home/pkomanek/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/graphiql-rails-1.7.0/app/views/graphiql/rails/editors/show.html.erb (31.7ms)
+Completed 200 OK in 34ms (Views: 33.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/graphql" for ::1 at 2021-01-07 15:08:32 +0100
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"\n    query IntrospectionQuery {\n      __schema {\n        queryType { name }\n        mutationType { name }\n        subscriptionType { name }\n        types {\n          ...FullType\n        }\n        directives {\n          name\n          description\n          locations\n          args {\n            ...InputValue\n          }\n        }\n      }\n    }\n\n    fragment FullType on __Type {\n      kind\n      name\n      description\n      fields(includeDeprecated: true) {\n        name\n        description\n        args {\n          ...InputValue\n        }\n        type {\n          ...TypeRef\n        }\n        isDeprecated\n        deprecationReason\n      }\n      inputFields {\n        ...InputValue\n      }\n      interfaces {\n        ...TypeRef\n      }\n      enumValues(includeDeprecated: true) {\n        name\n        description\n        isDeprecated\n        deprecationReason\n      }\n      possibleTypes {\n        ...TypeRef\n      }\n    }\n\n    fragment InputValue on __InputValue {\n      name\n      description\n      type { ...TypeRef }\n      defaultValue\n    }\n\n    fragment TypeRef on __Type {\n      kind\n      name\n      ofType {\n        kind\n        name\n        ofType {\n          kind\n          name\n          ofType {\n            kind\n            name\n            ofType {\n              kind\n              name\n              ofType {\n                kind\n                name\n                ofType {\n                  kind\n                  name\n                  ofType {\n                    kind\n                    name\n                  }\n                }\n              }\n            }\n          }\n        }\n      }\n    }\n  ", "graphql"=>{"query"=>"\n    query IntrospectionQuery {\n      __schema {\n        queryType { name }\n        mutationType { name }\n        subscriptionType { name }\n        types {\n          ...FullType\n        }\n        directives {\n          name\n          description\n          locations\n          args {\n            ...InputValue\n          }\n        }\n      }\n    }\n\n    fragment FullType on __Type {\n      kind\n      name\n      description\n      fields(includeDeprecated: true) {\n        name\n        description\n        args {\n          ...InputValue\n        }\n        type {\n          ...TypeRef\n        }\n        isDeprecated\n        deprecationReason\n      }\n      inputFields {\n        ...InputValue\n      }\n      interfaces {\n        ...TypeRef\n      }\n      enumValues(includeDeprecated: true) {\n        name\n        description\n        isDeprecated\n        deprecationReason\n      }\n      possibleTypes {\n        ...TypeRef\n      }\n    }\n\n    fragment InputValue on __InputValue {\n      name\n      description\n      type { ...TypeRef }\n      defaultValue\n    }\n\n    fragment TypeRef on __Type {\n      kind\n      name\n      ofType {\n        kind\n        name\n        ofType {\n          kind\n          name\n          ofType {\n            kind\n            name\n            ofType {\n              kind\n              name\n              ofType {\n                kind\n                name\n                ofType {\n                  kind\n                  name\n                  ofType {\n                    kind\n                    name\n                  }\n                }\n              }\n            }\n          }\n        }\n      }\n    }\n  "}}
+Completed 200 OK in 51ms (Views: 4.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/graphql" for ::1 at 2021-01-07 15:08:46 +0100
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"query {\n  users(limit: 5, offset: 0) {\n    id\n    name\n    email\n    posts(limit:1, offset:1) {\n      id\n      title\n      body\n    }\n    postsCount\n  }\n  usersCount\n  postsCount\n}\n", "variables"=>nil, "graphql"=>{"query"=>"query {\n  users(limit: 5, offset: 0) {\n    id\n    name\n    email\n    posts(limit:1, offset:1) {\n      id\n      title\n      body\n    }\n    postsCount\n  }\n  usersCount\n  postsCount\n}\n", "variables"=>nil}}
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/graphiql" for ::1 at 2021-01-07 15:11:14 +0100
+Processing by GraphiQL::Rails::EditorsController#show as HTML
+  Parameters: {"graphql_path"=>"graphql#execute"}
+  Rendering /home/pkomanek/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/graphiql-rails-1.7.0/app/views/graphiql/rails/editors/show.html.erb
+  Rendered /home/pkomanek/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/graphiql-rails-1.7.0/app/views/graphiql/rails/editors/show.html.erb (4.2ms)
+Completed 200 OK in 6ms (Views: 5.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/graphql" for ::1 at 2021-01-07 15:11:14 +0100
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"\n    query IntrospectionQuery {\n      __schema {\n        queryType { name }\n        mutationType { name }\n        subscriptionType { name }\n        types {\n          ...FullType\n        }\n        directives {\n          name\n          description\n          locations\n          args {\n            ...InputValue\n          }\n        }\n      }\n    }\n\n    fragment FullType on __Type {\n      kind\n      name\n      description\n      fields(includeDeprecated: true) {\n        name\n        description\n        args {\n          ...InputValue\n        }\n        type {\n          ...TypeRef\n        }\n        isDeprecated\n        deprecationReason\n      }\n      inputFields {\n        ...InputValue\n      }\n      interfaces {\n        ...TypeRef\n      }\n      enumValues(includeDeprecated: true) {\n        name\n        description\n        isDeprecated\n        deprecationReason\n      }\n      possibleTypes {\n        ...TypeRef\n      }\n    }\n\n    fragment InputValue on __InputValue {\n      name\n      description\n      type { ...TypeRef }\n      defaultValue\n    }\n\n    fragment TypeRef on __Type {\n      kind\n      name\n      ofType {\n        kind\n        name\n        ofType {\n          kind\n          name\n          ofType {\n            kind\n            name\n            ofType {\n              kind\n              name\n              ofType {\n                kind\n                name\n                ofType {\n                  kind\n                  name\n                  ofType {\n                    kind\n                    name\n                  }\n                }\n              }\n            }\n          }\n        }\n      }\n    }\n  ", "graphql"=>{"query"=>"\n    query IntrospectionQuery {\n      __schema {\n        queryType { name }\n        mutationType { name }\n        subscriptionType { name }\n        types {\n          ...FullType\n        }\n        directives {\n          name\n          description\n          locations\n          args {\n            ...InputValue\n          }\n        }\n      }\n    }\n\n    fragment FullType on __Type {\n      kind\n      name\n      description\n      fields(includeDeprecated: true) {\n        name\n        description\n        args {\n          ...InputValue\n        }\n        type {\n          ...TypeRef\n        }\n        isDeprecated\n        deprecationReason\n      }\n      inputFields {\n        ...InputValue\n      }\n      interfaces {\n        ...TypeRef\n      }\n      enumValues(includeDeprecated: true) {\n        name\n        description\n        isDeprecated\n        deprecationReason\n      }\n      possibleTypes {\n        ...TypeRef\n      }\n    }\n\n    fragment InputValue on __InputValue {\n      name\n      description\n      type { ...TypeRef }\n      defaultValue\n    }\n\n    fragment TypeRef on __Type {\n      kind\n      name\n      ofType {\n        kind\n        name\n        ofType {\n          kind\n          name\n          ofType {\n            kind\n            name\n            ofType {\n              kind\n              name\n              ofType {\n                kind\n                name\n                ofType {\n                  kind\n                  name\n                  ofType {\n                    kind\n                    name\n                  }\n                }\n              }\n            }\n          }\n        }\n      }\n    }\n  "}}
+Completed 200 OK in 58ms (Views: 4.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/graphql" for ::1 at 2021-01-07 15:11:16 +0100
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"query {\n  users(limit: 5, offset: 0) {\n    id\n    name\n    email\n    posts(limit:1, offset:1) {\n      id\n      title\n      body\n    }\n    postsCount\n  }\n  usersCount\n  postsCount\n}\n", "variables"=>nil, "graphql"=>{"query"=>"query {\n  users(limit: 5, offset: 0) {\n    id\n    name\n    email\n    posts(limit:1, offset:1) {\n      id\n      title\n      body\n    }\n    postsCount\n  }\n  usersCount\n  postsCount\n}\n", "variables"=>nil}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/graphql/types/query_type.rb:14
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/graphql/types/user_type.rb:17
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/graphql/types/user_type.rb:23
+  [1m[36mCACHE Post Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/graphql/types/user_type.rb:17
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/graphql/types/user_type.rb:23
+  [1m[36mCACHE Post Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/graphql/types/user_type.rb:17
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."user_id" = ?[0m  [["user_id", 3]]
+  ↳ app/graphql/types/user_type.rb:23
+  [1m[36mCACHE Post Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/graphql/types/user_type.rb:17
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."user_id" = ?[0m  [["user_id", 4]]
+  ↳ app/graphql/types/user_type.rb:23
+  [1m[36mCACHE Post Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/graphql/types/user_type.rb:17
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."user_id" = ?[0m  [["user_id", 5]]
+  ↳ app/graphql/types/user_type.rb:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  ↳ app/graphql/types/query_type.rb:32
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  ↳ app/graphql/types/query_type.rb:53
+Completed 200 OK in 46ms (Views: 0.8ms | ActiveRecord: 3.3ms)
+
+
+Started POST "/graphql" for ::1 at 2021-01-07 15:11:43 +0100
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"query {\n  users(limit: 2, offset: 1) {\n    id\n    name\n    email\n    posts(limit:1, offset:2) {\n      id\n      title\n      body\n    }\n    postsCount\n  }\n  usersCount\n  postsCount\n}\n", "variables"=>nil, "graphql"=>{"query"=>"query {\n  users(limit: 2, offset: 1) {\n    id\n    name\n    email\n    posts(limit:1, offset:2) {\n      id\n      title\n      body\n    }\n    postsCount\n  }\n  usersCount\n  postsCount\n}\n", "variables"=>nil}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/graphql/types/query_type.rb:14
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/graphql/types/user_type.rb:17
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/graphql/types/user_type.rb:23
+  [1m[36mCACHE Post Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/graphql/types/user_type.rb:17
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."user_id" = ?[0m  [["user_id", 3]]
+  ↳ app/graphql/types/user_type.rb:23
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  ↳ app/graphql/types/query_type.rb:32
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  ↳ app/graphql/types/query_type.rb:53
+Completed 200 OK in 19ms (Views: 0.3ms | ActiveRecord: 1.8ms)
+
+
+Started POST "/graphql" for ::1 at 2021-01-07 15:12:01 +0100
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"query {\n  users(limit: 2, offset: 1) {\n    id\n    name\n    email\n    posts(limit:2, offset:2) {\n      id\n      title\n      body\n    }\n    postsCount\n  }\n  usersCount\n  postsCount\n}\n", "variables"=>nil, "graphql"=>{"query"=>"query {\n  users(limit: 2, offset: 1) {\n    id\n    name\n    email\n    posts(limit:2, offset:2) {\n      id\n      title\n      body\n    }\n    postsCount\n  }\n  usersCount\n  postsCount\n}\n", "variables"=>nil}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/graphql/types/query_type.rb:14
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/graphql/types/user_type.rb:17
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/graphql/types/user_type.rb:23
+  [1m[36mCACHE Post Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/graphql/types/user_type.rb:17
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts" WHERE "posts"."user_id" = ?[0m  [["user_id", 3]]
+  ↳ app/graphql/types/user_type.rb:23
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  ↳ app/graphql/types/query_type.rb:32
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  ↳ app/graphql/types/query_type.rb:53
+Completed 200 OK in 22ms (Views: 0.4ms | ActiveRecord: 2.0ms)
+
+
