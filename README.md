@@ -8,7 +8,10 @@ start: `rails s`
 
 link for graphiql: `http://localhost:3000/graphiql`
 
-### Creation steps:
+# Example:
+![Screenshot](example.png)
+
+### Creation steps for rails app with graphql:
 ```
 1) Creat Rails APP with models:
  1.1) rails new rails-api-with-graphql --api --skip-test
