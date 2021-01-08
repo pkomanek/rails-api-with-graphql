@@ -11,7 +11,7 @@ bundle exec rails db:create db:migrate db:seed
 
 start: `rails s`
 
-link for graphiql: `http://localhost:3000/graphiql`
+graphiql endpoint: `http://localhost:3000/graphiql`
 
 # Example:
 ![Screenshot](example.png)
