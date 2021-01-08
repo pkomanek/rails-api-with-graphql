@@ -35,6 +35,7 @@ group :development, :test do
   gem 'pry'
   gem 'pry-byebug'
   gem 'pry-inline'
+  gem 'will_paginate'
 end
 
 group :development do

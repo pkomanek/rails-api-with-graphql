@@ -11,7 +11,7 @@ module Types
     field :posts_count, Integer, null: true
     field :created_at, GraphQL::Types::ISO8601DateTime, null: false
     field :updated_at, GraphQL::Types::ISO8601DateTime, null: false
-  
+
     def posts(args)
       res = args[:id] ? Post.find(args[:id]) : Post.all
       res = res.drop(args[:offset]) if args[:offset]

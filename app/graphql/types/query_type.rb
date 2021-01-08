@@ -1,5 +1,23 @@
 module Types
   class QueryType < Types::BaseObject
+    graphql_name 'Query'
+    description 'The root of all queries'
+
+    class << self
+      def record_field(name, type)
+        field name, type, resolver: Resolvers::Generic.for(type).record
+      end
+
+      def collection_field(name, type)
+        field name, type.connection_type,
+              null: false, resolver: Resolvers::Generic.for(type).collection
+      end
+    end
+
+    collection_field :usersConnections, Types::UserType
+    collection_field :postsConnections, Types::PostType
+    record_field :userConnection, Types::UserType
+
     # /users
     field :users, [Types::UserType], null: false do
       argument :id, ID, required: false
@@ -9,7 +27,7 @@ module Types
       #argument :sort_by
     end
 
-    def users(args)
+    def users(args = {})
       res = args[:id] ? User.find(args[:id]) : User.all
       res = res.drop(args[:offset]) if args[:offset]
       res = res.take(args[:limit]) if args[:limit]
@@ -39,7 +57,7 @@ module Types
       argument :offset, Integer, required: false
     end
 
-    def posts(args)
+    def posts(args = {})
       res = args[:id] ? Post.find(args[:id]) : Post.all
       res = res.drop(args[:offset]) if args[:offset]
       res = res.take(args[:limit]) if args[:limit]
