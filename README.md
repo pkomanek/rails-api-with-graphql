@@ -1,8 +1,13 @@
-# README
-
 This repository is only used to create and test graphql count ignoring limit and offset.
 
 * based on this guide: https://www.youtube.com/watch?v=kSlJH3hrV58
+
+# Installation: 
+```
+bundle install
+bundle exec rails db:create db:migrate db:seed
+```
+# How to use?
 
 start: `rails s`
 
