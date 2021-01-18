@@ -6,7 +6,7 @@ module Connections
     field :total_count, Integer, null: false
 
     def total_count
-      object.nodes.count
+      object.nodes.total_entries
     end
   end
 end

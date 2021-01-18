@@ -1,5 +1,4 @@
 # frozen_string_literal: true
-require 'will_paginate/array'
 
 module Resolvers
   module Concerns
@@ -35,7 +34,6 @@ module Resolvers
       def pagination_filter(offset:, limit:)
         lambda do |scope|
           begin
-            # This maybe cause the problem with removing the edges before totalCount
             scope.paginate(page: offset, per_page: limit)
           rescue ScopedSearch::QueryNotSupported => e
             raise GraphQL::ExecutionError, e.message
