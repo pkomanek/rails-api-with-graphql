@@ -22,7 +22,8 @@ graphiql endpoint: `http://localhost:3000/graphiql`
  1.1) rails new rails-api-with-graphql --api --skip-test
  1.2) rails g model User email:string name:string
  1.3) rails g model Post user:belongs_to title:string body:text
- 1.4) bundle exec rails db:migrate
+ 1.4) insert `has_many :posts` into the User model code
+ 1.5) bundle exec rails db:migrate
 2) Add extra gems:
  2.1) add 'graphql', 'graphiql-rails' and 'faker' gems into the GEMFILE
  2.2) bundle update
