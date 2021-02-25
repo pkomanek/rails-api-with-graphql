@@ -51,7 +51,7 @@ graphiql endpoint: `http://localhost:3000/graphiql`
   end
  ########CODE-END###########
  6) Get graphiql working
-  6.1) uncomment require "sprockets/railtie" inside the application.rb file
+  6.1) uncomment require "sprockets/railtie" inside the config/application.rb file
   6.2) create app/assets/config/manifest.js file with this code:
     ########CODE-START##########
   	//= link graphiql/rails/application.css
